@@ -1,9 +1,10 @@
 {
-  "name": "nodejs-express-test",
+  "name": "nodejs-express-backend-test",
   "version": "1.0.0",
   "description": "Node.js Rest Apis with Express, Sequelize & MySQL",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "db:seedall": "npx sequelize-cli db:seed:all",
     "db:makemigrations": "node node_modules/sequelize-auto-migrations/bin/makemigration.js",
     "db:migrate": "sequelize db:migrate",
@@ -17,7 +18,7 @@
     "sequelize",
     "mysql"
   ],
-  "author": "bezkoder",
+  "author": "Nicolas",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
