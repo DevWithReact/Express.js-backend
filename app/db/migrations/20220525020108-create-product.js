@@ -11,7 +11,7 @@ module.exports = {
       address: {
         type: Sequelize.STRING,
         references: {
-          model: "User",
+          model: "Users",
           key: "address",
         },
         onUpdate: "CASCADE",

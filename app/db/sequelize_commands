@@ -1,3 +1,5 @@
+## model generate
+
 npx sequelize-cli model:generate --name Catalog --attributes name:string,description:string,url:string,cost1:integer,cost2:integer,cost3:integer,req1:integer,req2:integer,req3:integer,category:integer
 
 npx sequelize-cli model:generate --name User --attributes address:string,cash1:float,cash2:float,cash3:float
@@ -5,3 +7,7 @@ npx sequelize-cli model:generate --name User --attributes address:string,cash1:f
 npx sequelize-cli model:generate --name Asset --attributes type:integer,level:integer,address:string
 
 npx sequelize-cli model:generate --name Product --attributes address:string
+
+## seed generate
+
+npx sequelize-cli seed:generate --name demo-user
