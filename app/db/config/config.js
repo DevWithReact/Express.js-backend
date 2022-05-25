@@ -4,6 +4,16 @@ require("dotenv").config()
 const { DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_LOGGING } = process.env
 
 const config = {
+  test: {
+    dialect: "sqlite",
+    storage: "./app/db/database.sqlite",
+    logging: parseInt(DB_LOGGING, 10) === 1 ? console.log : false,
+    retry: {
+      match: [/SQLITE_BUSY/],
+      name: "query",
+      max: 5,
+    },
+  },
   development: {
     dialect: "sqlite",
     storage: "./app/db/database.sqlite",

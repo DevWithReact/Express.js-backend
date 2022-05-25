@@ -5,10 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "db:seedall": "npx sequelize-cli db:seed:all",
     "db:makemigrations": "node node_modules/sequelize-auto-migrations/bin/makemigration.js",
+    "db:seedall": "npx sequelize-cli db:seed:all",
     "db:migrate": "sequelize db:migrate",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "cross-env NODE_ENV=test rm ./app/db/database.sqlite && npm run db:migrate && npm run db:seedall",
+    "test": "jest  --forceExit"
   },
   "keywords": [
     "nodejs",
@@ -30,5 +31,16 @@
     "sequelize-auto-migrations": "github:scimonster/sequelize-auto-migrations#a063aa6535a3f580623581bf866cef2d609531ba",
     "serialize-error": "^8.1.0",
     "sqlite3": "^5.0.8"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^28.1.0",
+    "supertest": "^6.2.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }

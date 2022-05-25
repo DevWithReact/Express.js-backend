@@ -29,3 +29,8 @@ npm run db:seedall
 ```
 npm run start
 ```
+
+#### 4.Test APIS
+```
+npm run test
+```
